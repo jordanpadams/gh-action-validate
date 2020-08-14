@@ -24,7 +24,7 @@ LABEL "maintainer"="Jordan Padams <jordan.h.padams@jpl.nasa.gov>"
 COPY entrypoint.sh /
 
 RUN apt-get update && apt-get install -y \
-curl wget default-jre-headless
+curl wget python3.6 default-jre-headless
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
