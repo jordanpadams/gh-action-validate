@@ -1,5 +1,6 @@
 #!/bin/sh
 
+GITHUB_WORK_DIR=/github/workspace
 DEBUG=1
 
 log_debug () {
@@ -23,7 +24,12 @@ release="$3"
 verbose="$4"
 
 # Check valid dirpath is specified
-if [ -z "$dirpath" ] || [ ! -d "$dirpath" ]; then
+if [ -z "$dirpath" ]; then
+    log_error "Valid directory path must be specified (dirpath)."
+fi
+
+dirpath=$GITHUB_WORK_DIR/$dirpath
+if  [ ! -d "$dirpath" ]; then
     log_error "Valid directory path must be specified. Dirpath: $dirpath"
 fi
 
