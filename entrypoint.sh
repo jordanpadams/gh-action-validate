@@ -24,7 +24,7 @@ verbose="$4"
 
 # Check valid dirpath is specified
 if [ -z "$dirpath" ] || [ ! -d "$dirpath" ]; then
-    log_error "Valid directory path must be specified (dirpath)"
+    log_error "Valid directory path must be specified. Dirpath: $dirpath"
 fi
 
 # Check dirpath contains schemas / schematrons / labels to validate
