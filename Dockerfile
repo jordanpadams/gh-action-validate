@@ -26,7 +26,7 @@ COPY entrypoint.sh /
 RUN apt-get update && apt-get install -y \
 curl wget
 
-# FROM java:8-jdk-alpine
+FROM java:8-jdk-alpine
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
