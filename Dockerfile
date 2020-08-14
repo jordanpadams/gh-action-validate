@@ -23,8 +23,10 @@ LABEL "maintainer"="Jordan Padams <jordan.h.padams@jpl.nasa.gov>"
 
 COPY entrypoint.sh /
 
-RUN apt-get update && apt-get install -y \
-curl
+RUN \
+    apt-get update
+    apt-get install curl wget
+    curl
 
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
