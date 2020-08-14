@@ -35,6 +35,7 @@ fi
 
 # Check dirpath contains schemas / schematrons / labels to validate
 if ! ls $dirpath/*.xml 1> /dev/null 2>&1 ; then
+    ls $dirpath/*.xml
     log_error "Invalid dirpath. Must contain at least one of schema, schematron, and XML label"
 fi
 
