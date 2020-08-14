@@ -22,8 +22,6 @@ pds4_version="$2"
 release="$3"
 verbose="$4"
 
-apt-get install curl wget
-
 # Check valid dirpath is specified
 if [ -z "$dirpath" ]; then
     log_error "Valid directory path must be specified (dirpath)."
