@@ -2,7 +2,7 @@
 # ===============================
 
 # Container image that runs your code
-FROM alpine:3.10
+FROM ubuntu:18.04
 
 
 # Metadata
@@ -23,9 +23,9 @@ LABEL "maintainer"="Jordan Padams <jordan.h.padams@jpl.nasa.gov>"
 
 COPY entrypoint.sh /
 
-RUN \
-    apt-get update; apt-get install curl; \
-    :
+RUN apt-get update && apt-get install -y \
+curl
+
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
