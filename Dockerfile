@@ -14,7 +14,7 @@ LABEL "com.github.actions.icon"="flag"
 LABEL "com.github.actions.color"="blue"
 
 LABEL "repository"="https://github.com/NASA-PDS/gh-action-pds-validate.git"
-LABEL "homepage"="https://pds.nasa.gov/"
+LABEL "homepage"="https://nasa-pds.github.io/validate/"
 LABEL "maintainer"="Jordan Padams <jordan.h.padams@jpl.nasa.gov>"
 
 
@@ -25,8 +25,6 @@ COPY entrypoint.sh /
 
 RUN apt-get update && apt-get install -y \
 curl wget
-
-# FROM java:8-jdk-alpine
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]

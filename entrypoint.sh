@@ -27,7 +27,7 @@ if [ -z "$dirpath" ]; then
     log_error "Valid directory path must be specified (dirpath)."
 fi
 
-dirpath=$GITHUB_WORKSPACE/$dirpath
+dirpath=$GITHUB_WORKSPACE/$dirpath/
 if  [ ! -d "$dirpath" ]; then
     log_error "Valid directory path must be specified. Dirpath: $dirpath"
 fi
