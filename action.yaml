@@ -24,7 +24,8 @@ inputs:
       PDS4 Information Model Version. Defaults to the latest version. Use the semantic version, e.g. 1.14.0.0
     required: false
     default: 'latest'
-  release: |
+  release:
+    description: |
       Flag to specify if this is intended as a release or a development build.
     required: false
     default: 'false'
