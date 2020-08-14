@@ -1,6 +1,5 @@
 #!/bin/sh
 
-GITHUB_WORK_DIR=/github/workspace
 DEBUG=1
 
 log_debug () {
@@ -23,12 +22,14 @@ pds4_version="$2"
 release="$3"
 verbose="$4"
 
+apt-get install curl wget
+
 # Check valid dirpath is specified
 if [ -z "$dirpath" ]; then
     log_error "Valid directory path must be specified (dirpath)."
 fi
 
-dirpath=$GITHUB_WORK_DIR/$dirpath
+dirpath=$GITHUB_WORKSPACE/$dirpath
 if  [ ! -d "$dirpath" ]; then
     log_error "Valid directory path must be specified. Dirpath: $dirpath"
 fi
