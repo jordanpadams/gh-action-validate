@@ -24,7 +24,7 @@ LABEL "maintainer"="Jordan Padams <jordan.h.padams@jpl.nasa.gov>"
 COPY entrypoint.sh /
 
 RUN apt-get update && apt-get install -y \
-curl wget default-jre-headless
+curl wget
 
 # FROM java:8-jdk-alpine
 
