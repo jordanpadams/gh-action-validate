@@ -38,7 +38,7 @@ if ! ls $dirpath/*.xml 1> /dev/null 2>&1 ; then
     log_error "Invalid dirpath. Must contain at least one of schema, schematron, and XML label"
 fi
 
-if [ "$verbose" == "true" ]; then
+if [ ! -z "$verbose" ] && [ "$verbose" == "true" ]; then
     DEBUG=0
 fi
 
