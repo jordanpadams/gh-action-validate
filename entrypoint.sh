@@ -26,7 +26,6 @@ fi
 
 # Check dirpath contains schemas / schematrons / labels to validate
 if ! ls $dirpath/*.xml 1> /dev/null 2>&1 ; then
-    ls $dirpath/*.xml
     log_error "Invalid dirpath. Must contain at least one of schema, schematron, and XML label"
 fi
 
@@ -39,6 +38,14 @@ wget -q --directory-prefix=/tmp https://github.com/NASA-PDS/validate/releases/do
 tar -xf /tmp/validate-${validate_version}-bin.tar.gz -C /tmp/
 
 # Validate the input data
-/tmp/validate-${validate_version}/bin/validate --skip-content-validation -R pds4.label -x $dirpath/*.xsd -S $dirpath/*.sch -t $dirpath/*.xml
+args="--skip-content-validation -R pds4.label"
+if [ -n "$schemas" ]; then
+    args="$args -x $schemas"
+fi
+
+if [ -n "$schematrons" ]; then
+    args="$args -S $schematrons"
+fi
+/tmp/validate-${validate_version}/bin/validate -t $dirpath/*.xml $args
 
 exit $?
