@@ -21,7 +21,7 @@ if [ -z "$datapath" ]; then
 fi
 
 if  [ ! -d "$datapath" ]; then
-    log_error "Valid directory path must be specified. Dirpath: $datapath"
+    log_error "Valid directory path must be specified. Datapath: $datapath"
 fi
 
 # Check datapath contains schemas / schematrons / labels to validate
