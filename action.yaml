@@ -39,6 +39,8 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{inputs.datapath}}
-    - ${{inputs.pds4_version}}
-    - ${{inputs.release}}
+    - ${{inputs.schemas}}
+    - ${{inputs.schematrons}}
+    - ${{inputs.skip_content_validation}}
+    - ${{inputs.failure_expected}}
 
