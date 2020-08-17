@@ -1,11 +1,7 @@
-# 📡 PDS Engineering: Git Ping Action
+# 📡 PDS: PDS4 Validation Action
 # ===================================
 #
-# This is a GitHub action that:
-# • Pings a remote repository on GitHub
-# • (By submitting an empty commit)
-# • And noting else!
-
+# This is a GitHub action validates PDS4 XML labels
 ---
 
 name: '✅ PDS Engineering: PDS Validate'
